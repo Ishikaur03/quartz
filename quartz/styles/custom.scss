@@ -1,3 +1,84 @@
 @use "./base.scss";
+@use "./variables.scss" as *;
 
-// put your custom CSS here!
+/* ===============================
+   Landing page only
+=============================== */
+
+body[data-slug="index"] {
+  .content-meta {
+        display : none;
+  }
+}
+
+
+
+/* Firefly */
+body[data-slug="index"] img[src*="firefly"] {
+  position: absolute;
+  top: 15rem;
+  right: 24rem;
+  width: 220px;
+  opacity: 0.55;
+  transform: rotate(-4deg);
+  filter: blur(0.3px);
+  pointer-events: none;
+}
+
+// body[data-slug="index"] img[src*="firefly"] {
+//   position: absolute;
+//   top: 10rem;
+//   right: 4rem;          /* where graph used to be */
+//   width: 240px;
+//   opacity: 0.55;
+//   transform: rotate(-6deg);
+//   filter: blur(0.4px);
+//   pointer-events: none;
+// }
+
+[saved-theme="dark"] body[data-slug="index"] img[src*="firefly.svg"] {
+  filter: invert(100%);
+}
+
+body[data-slug="index"] hr {
+  overflow: visible;
+  padding: 0;
+  height: 0;
+  margin: 0rem auto 0rem auto; /* ↓ push it closer to lotus */
+  border: none;
+  text-align: center;
+  width: 100%;
+}
+
+body[data-slug="index"] hr::after {
+  content: "* * *";
+  display: inline-block;
+  font-size: 1.4rem;
+  padding: 0em 0em;
+  color: var(--gray);
+}
+/* Lotus */
+body[data-slug="index"] img[src*="lotus22"] {
+  display: block;
+  margin: 0rem auto 1rem auto;      /* big pause before & after */
+  width: min(570px, 74vw);          /* much larger */
+  opacity: 0.5;                    /* stronger presence */
+  pointer-events: none;
+//   transform: scaleX(-1);
+}
+
+[saved-theme="dark"] body[data-slug="index"] img[src*="lotus22.svg"] {
+  filter: invert(100%);
+}
+
+
+
+
+
+
+
+/* Optional: book-style divider */
+// body[data-slug="index"] hr:after {
+//   content: "—";
+//   font-size: 1.2rem;
+// }
